@@ -98,7 +98,12 @@ WORKDIR /home/ubuntu/csc477_ws/src
 
 RUN . /opt/ros/noetic/setup.sh && catkin_init_workspace
 
-RUN git clone https://github.com/florianshkurti/csc477_winter24.git
+#---------------------------------
+# Testing build environment
+# TODO: delete this before releasing to students so they don't lose work
+# due to their source code volume not being mounted properly at runtime
+COPY csc477_winter24 /home/ubuntu/csc477_ws/src/csc477_winter24
+#RUN git clone https://github.com/florianshkurti/csc477_winter24.git
 
 WORKDIR /home/ubuntu/csc477_ws/
 
@@ -109,5 +114,7 @@ RUN /bin/bash -c '. /opt/ros/noetic/setup.bash; catkin_make' || true
 RUN /bin/bash -c '. /opt/ros/noetic/setup.bash; catkin_make'
 
 RUN echo 'source /home/ubuntu/csc477_ws/devel/setup.bash' >> /home/ubuntu/.bashrc
+
+#---------------------------------
 
 USER root
