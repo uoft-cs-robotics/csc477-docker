@@ -1,6 +1,5 @@
 FROM osrf/ros:noetic-desktop-full
 
-RUN 
 
 #TODO: find out whether ros-noetic-joy is needed
 RUN apt-get update && apt-get install -y \
@@ -9,7 +8,8 @@ RUN apt-get update && apt-get install -y \
         ros-noetic-joy \
         tmux \
         vim \
-        git
+        git 
+
 
 # BEGIN VNC SERVER INSTALL
 
@@ -88,9 +88,17 @@ CMD ["/usr/bin/supervisord","-c","/etc/supervisord.conf"]
 
 # END VNC INSTALL
 
+
+
 USER ubuntu
 
 WORKDIR /home/ubuntu
+
+# GENERATE VNC PASSWORD
+
+RUN openssl rand -base64 8 >> key.txt
+
+RUN /bin/bash -c 'x11vnc -storepasswd $(< key.txt) key'
 
 RUN mkdir -p csc477_ws/src
 
