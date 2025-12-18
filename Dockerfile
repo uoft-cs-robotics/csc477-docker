@@ -54,16 +54,16 @@ RUN echo "root:ubuntu" | /usr/sbin/chpasswd \
     && echo "ubuntu    ALL=(ALL) ALL" >> /etc/sudoers 
 
 # add my sys config files
-ADD docker_ubuntu-vnc/etc /etc
+ADD etc /etc
 
 # user config files
 
 # terminal
-ADD docker_ubuntu-vnc/config/xfce4/terminal/terminalrc /home/ubuntu/.config/xfce4/terminal/terminalrc
+ADD config/xfce4/terminal/terminalrc /home/ubuntu/.config/xfce4/terminal/terminalrc
 # wallpaper
-ADD docker_ubuntu-vnc/config/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml /home/ubuntu/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml
+ADD config/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml /home/ubuntu/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml
 # icon theme
-ADD docker_ubuntu-vnc/config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml /home/ubuntu/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
+ADD config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml /home/ubuntu/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml
 
 # TZ, aliases
 RUN cd /home/ubuntu \
@@ -81,7 +81,7 @@ RUN cd /home/ubuntu \
 RUN chown -R ubuntu:ubuntu /home/ubuntu/.*
 
 # ports
-EXPOSE 22 5900
+EXPOSE 5900
 
 # # default command
 CMD ["/usr/bin/supervisord","-c","/etc/supervisord.conf"]
