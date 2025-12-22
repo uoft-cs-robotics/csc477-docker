@@ -7,7 +7,7 @@
  1. ssh UTORID@mcsdocker.utm.utoronto.ca
  2. docker images
  3. if csc477 present - skip to step 7, otherwise continue to step 4
- 4. git clone https://mcsgitlab.utm.utoronto.ca/zetkoger/csc477-docker.git
+ 4. git clone --recurse-submodules https://mcsgitlab.utm.utoronto.ca/zetkoger/csc477-docker.git
  5. cd csc477-docker/
  6. docker build -t "csc477" .
  7. docker run -P -d --name csc477 -v $(pwd)/csc477_winter24:/home/ubuntu/csc477_ws/src csc477
@@ -24,7 +24,7 @@
 
 ## Steps
 
- 1. git clone https://mcsgitlab.utm.utoronto.ca/zetkoger/csc477-docker.git
+ 1. git clone --recurse-submodules https://mcsgitlab.utm.utoronto.ca/zetkoger/csc477-docker.git
  2. cd csc477-docker/
  3. docker build -t "csc477" .
  4. docker run -P -d --name csc477 -v $(pwd)/csc477_winter24:/home/ubuntu/csc477_ws/src csc477
