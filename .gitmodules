@@ -1,6 +1,0 @@
-[submodule "docker_ubuntu-vnc"]
-	path = docker_ubuntu-vnc
-	url = https://github.com/rwildcat/docker_ubuntu-vnc.git
-[submodule "csc477_winter24"]
-	path = csc477_winter24
-	url = https://github.com/florianshkurti/csc477_winter24.git
