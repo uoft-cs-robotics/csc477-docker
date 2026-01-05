@@ -115,8 +115,7 @@ RUN . /opt/ros/noetic/setup.sh && catkin_init_workspace
 # Testing build environment
 # TODO: delete this before releasing to students so they don't lose work
 # due to their source code volume not being mounted properly at runtime
-COPY csc477_winter24 /home/ubuntu/csc477_ws/src/csc477_winter24
-#RUN git clone https://github.com/florianshkurti/csc477_winter24.git
+COPY csc477_winter26 /home/ubuntu/csc477_ws/src/csc477_winter26
 
 WORKDIR /home/ubuntu/csc477_ws/
 
