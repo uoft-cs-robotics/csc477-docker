@@ -4,7 +4,7 @@
  - Linux based local machine
  - VNC Viewer of your choice installed on local machine
 
- 1. ssh `UTORID`@mcsdocker.utm.utoronto.ca
+ 1. ssh `UTORID`@mcsdocker.utm.utoronto.ca (If you are accessing from home, utorvpn needs to be on: https://security.utoronto.ca/services/vpn/)
  2. If this is the first time, setup docker permissions starting with step 3, if not, skip to step 6
  3. dockerd-rootless-setuptool.sh install
  4. echo -e "export PATH=/usr/bin:\$PATH\nexport DOCKER_HOST=unix:///run/user/$(id -u)/docker.sock" >> ~/.bashrc # This appends two export commands in ~/.bashrc
