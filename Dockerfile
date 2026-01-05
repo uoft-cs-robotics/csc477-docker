@@ -83,8 +83,13 @@ RUN chown -R ubuntu:ubuntu /home/ubuntu/.*
 # ports
 EXPOSE 5900
 
-# # default command
-CMD ["/usr/bin/supervisord","-c","/etc/supervisord.conf"]
+COPY scripts/ /home/ubuntu
+
+RUN chmod +x /home/ubuntu/startup.sh
+
+# default command
+CMD ["/home/ubuntu/startup.sh"]
+# CMD ["/usr/bin/supervisord","-c","/etc/supervisord.conf"]
 
 # END VNC INSTALL
 
@@ -122,6 +127,8 @@ RUN /bin/bash -c '. /opt/ros/noetic/setup.bash; catkin_make' || true
 RUN /bin/bash -c '. /opt/ros/noetic/setup.bash; catkin_make'
 
 RUN echo 'source /home/ubuntu/csc477_ws/devel/setup.bash' >> /home/ubuntu/.bashrc
+
+WORKDIR /home/ubuntu
 
 #---------------------------------
 
