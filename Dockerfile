@@ -111,7 +111,7 @@ RUN . /opt/ros/noetic/setup.sh && catkin_init_workspace
 
 #---------------------------------
 # Testing build environment
-COPY csc477_winter26 /home/ubuntu/csc477_ws/src/csc477_winter26
+COPY csc477_winter26 /home/ubuntu/csc477_ws/src/
 
 WORKDIR /home/ubuntu/csc477_ws/
 
