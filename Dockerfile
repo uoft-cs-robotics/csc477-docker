@@ -1,7 +1,6 @@
 FROM osrf/ros:noetic-desktop-full
 
 
-#TODO: find out whether ros-noetic-joy is needed
 RUN apt-get update && apt-get install -y \
         ros-noetic-ros-control \
         ros-noetic-ros-controllers \
@@ -89,7 +88,6 @@ RUN chmod +x /home/ubuntu/startup.sh
 
 # default command
 CMD ["/home/ubuntu/startup.sh"]
-# CMD ["/usr/bin/supervisord","-c","/etc/supervisord.conf"]
 
 # END VNC INSTALL
 
@@ -113,8 +111,6 @@ RUN . /opt/ros/noetic/setup.sh && catkin_init_workspace
 
 #---------------------------------
 # Testing build environment
-# TODO: delete this before releasing to students so they don't lose work
-# due to their source code volume not being mounted properly at runtime
 COPY csc477_winter26 /home/ubuntu/csc477_ws/src/csc477_winter26
 
 WORKDIR /home/ubuntu/csc477_ws/
