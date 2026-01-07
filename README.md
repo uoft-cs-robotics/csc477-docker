@@ -11,7 +11,7 @@
  5. source ~/.bashrc
  6. docker images
  7. if csc477 present - skip to step 11, otherwise continue to step 8
- 8. git clone --recurse-submodules https://mcsgitlab.utm.utoronto.ca/zetkoger/csc477-docker.git
+ 8. git clone https://github.com/uoft-cs-robotics/csc477-docker
  9. cd csc477-docker/
  10. docker build -t "csc477" . 
  11. docker run -P -d --name csc477 -v $(pwd)/csc477_winter24:/home/ubuntu/csc477_ws/src:rw csc477
@@ -36,7 +36,7 @@
 
 ## Steps
 
- 1. git clone --recurse-submodules https://mcsgitlab.utm.utoronto.ca/zetkoger/csc477-docker.git
+ 1. git clone https://github.com/uoft-cs-robotics/csc477-docker
  2. cd csc477-docker/
  3. docker build -t "csc477" .
  4. docker run -P -d --name csc477 -v $(pwd)/csc477_winter24:/home/ubuntu/csc477_ws/src:rw csc477
