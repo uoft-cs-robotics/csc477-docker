@@ -1,5 +1,6 @@
 FROM osrf/ros:noetic-desktop-full
 
+ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y \
         ros-noetic-ros-control \
@@ -7,7 +8,8 @@ RUN apt-get update && apt-get install -y \
         ros-noetic-joy \
         tmux \
         vim \
-        git 
+        git \
+		terminator
 
 
 # BEGIN VNC SERVER INSTALL
@@ -19,8 +21,7 @@ ENV XRES=1280x800x24
 ENV TZ=Etc/UTC
 
 # update and install software
-RUN export DEBIAN_FRONTEND=noninteractive  \
-	&& apt-get update -q \
+RUN apt-get update -q \
 	&& apt-get upgrade -qy \
 	&& apt-get install -qy  --no-install-recommends \
 	apt-utils sudo supervisor vim openssh-server \
