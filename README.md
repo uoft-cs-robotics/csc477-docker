@@ -14,9 +14,9 @@
  8. git clone https://github.com/uoft-cs-robotics/csc477-docker
  9. cd csc477-docker/
  10. docker build -t "csc477" . 
- 11. docker run -P -d --name csc477 -v $(pwd)/csc477_winter26:/home/ubuntu/csc477_ws/src:rw csc477
+ 11. docker run -P -d --name csc477-$USER -v $(pwd)/csc477_winter26:/home/ubuntu/csc477_ws/src:rw csc477
  12. docker ps # make a note of the port that the container's 5900 gets exposed to (see explanation below), denote it by `XXXX`. ex. PORTS 0.0.0.0:32768->5900/tcp, `XXXX` is 32768.
- 13. docker exec csc477 cat /home/ubuntu/key.txt # make note of this password, you'll need it to connect to VNC
+ 13. docker exec csc477-$USER cat /home/ubuntu/key.txt # make note of this password, you'll need it to connect to VNC
  14. in a new terminal window on host: ssh -L 5900:localhost:`XXXX` -C `UTORID`@mcsdocker.utm.utoronto.ca
  15. Connect to localhost:5900 using the VNC client of your choice and the password found on step 9
 
@@ -39,9 +39,9 @@
  1. git clone https://github.com/uoft-cs-robotics/csc477-docker
  2. cd csc477-docker/
  3. docker build -t "csc477" .
- 4. docker run -P -d --name csc477 -v $(pwd)/csc477_winter26:/home/ubuntu/csc477_ws/src:rw csc477
+ 4. docker run -P -d --name csc477-$USER -v $(pwd)/csc477_winter26:/home/ubuntu/csc477_ws/src:rw csc477
  5. docker ps # make a note of the port that the container's 5900 gets exposed to (see explanation below), denote it by `XXXX`. ex. PORTS 0.0.0.0:32769->5900/tcp, `XXXX` is 32769.
- 6. docker exec csc477 cat /home/ubuntu/key.txt # make note of this password, you'll need it to connect to VNC
+ 6. docker exec csc477-$USER cat /home/ubuntu/key.txt # make note of this password, you'll need it to connect to VNC
  7. Connect to localhost:`XXXX` using the VNC client of your choice and the password found on step 6
 
  
