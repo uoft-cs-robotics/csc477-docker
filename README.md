@@ -49,5 +49,13 @@
 
 <img width="1192" height="146" alt="port-instruction" src="https://github.com/user-attachments/assets/81112374-21cb-4765-8cc7-20477059c4f9" />
 
+# Frequently asked questions
 
+### Q: After I use docker run, I get the following error: `docker: Error response from daemon: failed to set up container networking: driver failed programming external connectivity on endpoint csc477-UTORID (8d9c1504f7cf29e11e9f834186931c6d56c247f8f5268a3c066a45c5a34ebb49): error while calling RootlessKit PortManager.AddPort(): listen tcp4 0.0.0.0:32769: bind: address already in use`
+
+A: Run `docker rm -f csc477-$USER`and try again.
+
+### Q: After using catkin_make for the first time in the workspace, I get the following error: `CMake Error at /opt/ros/noetic/share/catkin/cmake/test/tests.cmake:190 (add_dependencies):`
+  
+A: Run catkin_make again. (You have to do it twice sometimes)
 
