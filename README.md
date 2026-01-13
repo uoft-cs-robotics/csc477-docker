@@ -59,3 +59,6 @@ A: Run `docker rm -f csc477-$USER`and try again.
   
 A: Run catkin_make again. (You have to do it twice sometimes)
 
+### Q: What is the password for ubuntu? (for running sudo commands)
+
+A: ubuntu
