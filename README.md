@@ -61,3 +61,7 @@ A: Run catkin_make again. (You have to do it twice sometimes)
 ### Q: What is the password for ubuntu? (for running sudo commands)
 
 A: ubuntu
+
+### Q: How to restart the container if it stopped?
+
+A: docker start csc477-$USER
