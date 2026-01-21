@@ -10,7 +10,10 @@
  4. echo -e "export PATH=/usr/bin:\$PATH\nexport DOCKER_HOST=unix:///run/user/$(id -u)/docker.sock" >> ~/.bashrc # This appends two export commands in ~/.bashrc
  5. source ~/.bashrc
  6. docker images
- 7. if csc477 present - skip to step 11, otherwise continue to step 8
+ 7. docker ps -a
+         if csc477 present on both, run `docker rm -f csc477-$USER` and skip to step 11
+         if csc477 is only present as an image, skip to step 11,
+         otherwise continue to step 8
  8. git clone https://github.com/uoft-cs-robotics/csc477-docker
  9. cd csc477-docker/
  10. docker build -t "csc477" . 
