@@ -20,7 +20,7 @@
  11. docker run -p `XXXX`:5900 -d --name csc477-$USER -v $(pwd)/csc477_winter26:/home/ubuntu/csc477_ws/src:rw csc477 # where XXXX is a number you pick from 1024-6099; NOTE: RUN THIS FROM csc477-docker/ DIRECTORY!
  12. docker exec csc477-$USER cat /home/ubuntu/key.txt # make note of this password, you'll need it to connect to VNC
  13. in a new terminal window on host: ssh -L 5900:localhost:`XXXX` -C `UTORID`@mcsdocker.utm.utoronto.ca
- 14. Connect to localhost:5900 using the VNC client of your choice and the password found on step 9
+ 14. Connect to localhost:5900 using the VNC client of your choice and the password found on step 12
 
 ## Use VScode to Edit the Code
 
@@ -46,7 +46,15 @@
  6. docker exec csc477-$USER cat /home/ubuntu/key.txt # make note of this password, you'll need it to connect to VNC
  7. Connect to localhost:`XXXX` using the VNC client of your choice and the password found on step 6
 
- 
+# Running the container on mcsdocker after it's been built
+ 1. ssh `UTORID`@mcsdocker.utm.utoronto.ca (If you are accessing from home, utorvpn needs to be on: https://security.utoronto.ca/services/vpn/)
+ 2. cd csc477-docker/
+ 3. docker rm -f csc477-$USER
+ 4. docker run -p `XXXX`:5900 -d --name csc477-$USER -v $(pwd)/csc477_winter26:/home/ubuntu/csc477_ws/src:rw csc477 # where XXXX is a number you pick from 1024-6099
+ 5. docker exec csc477-$USER cat /home/ubuntu/key.txt # make note of this password, you'll need it to connect to VNC
+ 6. in a new terminal window on host: ssh -L 5900:localhost:`XXXX` -C `UTORID`@mcsdocker.utm.utoronto.ca
+ 7. Connect to localhost:5900 using the VNC client of your choice and the password found on step 5
+
 # How to find what port VNC is exposed through on docker
 
 <img width="1192" height="146" alt="port-instruction" src="https://github.com/user-attachments/assets/81112374-21cb-4765-8cc7-20477059c4f9" />
